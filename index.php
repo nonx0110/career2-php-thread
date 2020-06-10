@@ -11,6 +11,7 @@
     <textarea name="contents" rows="8" cols="40" placeholder="内容" required>
 </textarea><br><br>
     <input type="submit" name="btn" value="投稿する">
+    <button type="button" name="btn" value="スレッドの全削除" onclick ="threadInit()">スレッドの全削除</button>
 </form>
 
 <h2>スレッド</h2>
@@ -18,6 +19,10 @@
 <?php
 
 const THREAD_FILE = 'thread.txt';
+
+function theradInit(){
+    echo "aaa";
+}
 
 function readData() {
     // ファイルが存在しなければデフォルト空文字のファイルを作成する
