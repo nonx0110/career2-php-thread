@@ -35,6 +35,7 @@ function writeData() {
     $personal_name = $_POST['personal_name'];
     $contents = $_POST['contents'];
     $contents = nl2br($contents);
+    $time = data("Y/m/d(W) H:i:s");
 
     $data = "<hr>\n";
     $data = $data."<p>投稿者:".$personal_name."</p>\n";
@@ -53,7 +54,7 @@ function writeData() {
         }else{
             print('ファイルロックに失敗しました');
         }
-        
+
     }
 
     fclose($fp);
