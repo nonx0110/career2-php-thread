@@ -35,7 +35,7 @@ function writeData() {
     $personal_name = $_POST['personal_name'];
     $contents = $_POST['contents'];
     $contents = nl2br($contents);
-    $time = date("Y/m/d(W) H:i:s");
+    $time = date("Y/m/d(D) H:i:s");
 
     $data = "<hr>\n";
     $data = $data."<p>投稿者:".$personal_name.":".$time."</p>\n";
