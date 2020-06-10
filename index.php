@@ -38,7 +38,7 @@ function writeData() {
     $time = date("Y/m/d(W) H:i:s");
 
     $data = "<hr>\n";
-    $data = $data."<p>投稿者:".$personal_name.$time."</p>\n";
+    $data = $data."<p>投稿者:".$personal_name.":".$time."</p>\n";
     $data = $data."<p>内容:</p>\n";
     $data = $data."<p>".$contents."</p>\n";
 
