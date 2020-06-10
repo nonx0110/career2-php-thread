@@ -53,6 +53,7 @@ function writeData() {
         }else{
             print('ファイルロックに失敗しました');
         }
+        
     }
 
     fclose($fp);
