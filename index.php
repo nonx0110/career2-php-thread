@@ -11,17 +11,23 @@
     <textarea name="contents" rows="8" cols="40" placeholder="内容" required>
 </textarea><br><br>
     <input type="submit" name="btn" value="投稿する">
-    <button type="button" name="btn" value="スレッドの全削除" onclick ="threadInit()">スレッドの全削除</button>
+    
 </form>
 
 <h2>スレッド</h2>
+
+<form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
+    <input type="hidden" name="method" value="DELETE">
+    <button type="submit">スレッドの全削除</button>
+</form>
 
 <?php
 
 const THREAD_FILE = 'thread.txt';
 
-function theradInit(){
-    echo "aaa";
+function threadInit(){
+    file_put_contents(THREAD_FILE,"");
+    //echo '実行';
 }
 
 function readData() {
@@ -33,6 +39,7 @@ function readData() {
     }
 
     $thread_text = file_get_contents(THREAD_FILE);
+    //echo '実行';
     echo $thread_text;
 }
 
@@ -76,7 +83,11 @@ function writeData() {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    writeData();
+    if(isset($_POST["method"]) && $_POST["method"] === "DELETE"){
+        threadInit();
+    }else{
+        writeData();
+    }
 }
 
 readData();
