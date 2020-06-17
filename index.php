@@ -40,10 +40,13 @@ function writeData() {
     $personal_name = $_POST['personal_name'];
     $contents = $_POST['contents'];
     $contents = nl2br($contents);
-    $time = date("Y/m/d(D) H:i:s");
+    $day = date("Y/m/d");
+    $time = date(" H:i:s");
+    $week_Data = date("w");
+    $week = ["日","月","火","水","木","土"];
 
     $data = "<hr>\n";
-    $data = $data."<p>投稿者:".$personal_name.":".$time."</p>\n";
+    $data = $data."<p>投稿者:".$personal_name.":".$day."(".$week[$week_Data].")".$time."</p>\n";
     $data = $data."<p>内容:</p>\n";
     $data = $data."<p>".$contents."</p>\n";
 
