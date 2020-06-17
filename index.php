@@ -1,9 +1,11 @@
 <html>
 <head><title>掲示板</title></head>
 <body>
-
-<h1>掲示板App</h1>
-
+<font color="red">
+    <center>
+        <h1>掲示板App</h1>
+    </center>
+</font>
 <h2>投稿フォーム</h2>
 
 <form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
